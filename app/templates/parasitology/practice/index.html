@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  <h5>Select Levels</h5>
+    <ul class="collection">
+      <a href="/parasitology/practice/level1" class="collection-item">
+        <div>
+          Level 1
+        </div>
+      </a>
+      <a href="#" class="collection-item disabled">
+        <div>
+          Level 2
+        </div>
+      </a>
+      <a href="#" class="collection-item disabled">
+        <div>
+          Level 3
+        </div>
+      </a>
+      <a href="/parasitology/" class="collection-item">
+        <div>
+          Back
+        </div>
+      </a>
+    </ul>
+</div>
+{% endblock %}

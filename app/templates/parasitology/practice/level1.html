@@ -1,0 +1,40 @@
+{% extends "parasitology/practice/scope.html" %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/parasitology/practice/level1.js') }}">
+</script>
+{% endblock %}
+
+{% block section_content %}
+<h4>Practice Mode: Level 1</h4>
+<div data-bind="visible: lastFoundEggInfoId()==0">
+  <h5>Objective</h5>
+  <p>This level is designed for a beginner to learn how to differentiate an egg of a parasite and artifacts.</p>
+  <h5>Instruction</h5>
+  <p>Click at the item you think is the egg. Use zoom to facilitate clicking. The results are shown below.</p>
+</div>
+<div data-bind="visible: lastFoundEggInfoId()!=0">
+  <h4>Results</h4>
+  <ul class="collection">
+    <li class="collection-item">Eggs identified: <span data-bind="text: numEggsFound().length"></span></li>
+    <li class="collection-item">Artifacts identified as eggs: <span data-bind="text: numArtifactsFound().length"></span></li>
+    <li class="collection-item">Eggs not found: <span data-bind="text: numEggs() - numEggsFound().length"></span></li>
+  </ul>
+  <h5>Distinctive Features</h5>
+  <img src="{{ url_for('static', filename='images/parasites/info/006.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==1" height="250"></li>
+  <img src="{{ url_for('static', filename='images/parasites/info/001.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==4" height="250"></li>
+  <img src="{{ url_for('static', filename='images/parasites/info/002.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==3" height="250"></li>
+  <img src="{{ url_for('static', filename='images/parasites/info/010.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==5" height="250"></li>
+  <img src="{{ url_for('static', filename='images/parasites/info/004.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==6" height="250"></li>
+  <img src="{{ url_for('static', filename='images/parasites/info/011.png') }}"
+      data-bind="visible: lastFoundEggInfoId()==7" height="250"></li>
+  <img src="{{ url_for('static', filename='images/sad-baby.jpg') }}"
+      data-bind="visible: lastFoundEggInfoId()==-1" height="250"></li>
+</div>
+{% endblock %}

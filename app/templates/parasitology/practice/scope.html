@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <div class="row">
+    <div class="col s2">
+      <div class="row">
+        <h5>Microscope Controllers</h5>
+        <p>Use arrow keys or the buttons below to move the field around. Use 'Z' key to toggle zoom.</p>
+        <ul class="collection">
+          <li class="collection-item">
+            <a href="#" data-bind="click: zoomIn, visible: !isZoomed()">
+              <i class="icon-zoom-in icon-2x"></i> 40x</a>
+            <a href="#" data-bind="click: zoomOut, visible: isZoomed()">
+              <i class="icon-zoom-out icon-2x"></i> 10x</a>
+          </li>
+          <li class="collection-item">
+            <a href="#" data-bind="click: function(data, event) { moveEgg('up',10); }">
+              <i class="icon-circle-arrow-up icon-2x"></i> 1x</a>
+            <a class="secondary-content" href="#" data-bind="click: function(data, event) { moveEgg('right',10); }">
+              <i class="icon-circle-arrow-right icon-2x"></i> 1x</a>
+          </li>
+          <li class="collection-item">
+            <a href="#" data-bind="click: function(data, event) { moveEgg('down',10); }">
+              <i class="icon-circle-arrow-down icon-2x"></i> 1x</a>
+            <a class="secondary-content"href="#" data-bind="click: function(data, event) { moveEgg('left',10); }">
+              <i class="icon-circle-arrow-left icon-2x"></i> 1x</a>
+          </li>
+          <!--
+          <li class="collection-item">
+            <a href="#" data-bind="click: function(data, event) { moveEgg('up',200); }">
+              <i class="icon-circle-arrow-up icon-2x"></i> 20x</a>
+            <a class="secondary-content" href="#" data-bind="click: function(data, event) { moveEgg('right',200); }">
+              <i class="icon-circle-arrow-right icon-2x"></i> 20x</a>
+          </li>
+          <li class="collection-item">
+            <a href="#" data-bind="click: function(data, event) { moveEgg('down',200); }">
+              <i class="icon-circle-arrow-down icon-2x"></i> 20x</a>
+            <a class="secondary-content" href="#" data-bind="click: function(data, event) { moveEgg('left',200); }">
+              <i class="icon-circle-arrow-left icon-2x"></i> 20x</a>
+          </li>
+          -->
+        </ul>
+      </div>
+      <div class="row">
+        <h5>Session Controllers</h5>
+        <ul class="collection">
+          <a class="collection-item" href="#" data-bind="click: zoomIn">
+            <i class="icon-play icon-large"></i> Start</a>
+          <a class="collection-item" href="#" data-bind="click: zoomIn">
+            <i class="icon-stop icon-large"></i> Stop</a>
+          <a class="collection-item" href="#" data-bind="click: zoomIn">
+            <i class="icon-refresh icon-large"></i> Start over</a>
+          <a class="collection-item" href="#" data-bind="click: zoomIn">
+            <i class="icon-user icon-large"></i> Account</a>
+          <a class="collection-item" href="{{ url_for('parasitology.index') }}">
+            <i class="icon-signout icon-large"></i> Exit</a>
+        </ul>
+      </div><!-- row -->
+    </div> <!-- col s2 -->
+    <div class="col">
+      <canvas width="700" height="650" id="canvas"
+        style="background: black; border: black solid 1px">
+      </canvas>
+    </div>
+    <div class="col s3">
+        {% block section_content %}
+        {% endblock %}
+    </div>
+  </div> <!-- main row -->
+  {% block scripts %}
+      <script src="{{ url_for('static', filename='js/display.js') }}"></script>
+  {% endblock %}
+{% endblock %}

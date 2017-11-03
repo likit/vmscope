@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>VMScope v.0.3</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/materialize.min.css') }}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script
+      src="{{ url_for('static', filename='js/vendors/jquery.min.js') }}">
+    </script>
+    <script
+      src="{{ url_for('static', filename='js/vendors/materialize.min.js') }}">
+    </script>
+    <script
+      src="{{ url_for('static', filename='js/vendors/knockout.js') }}">
+    </script>
+    <script
+      src="{{ url_for('static', filename='js/vendors/createjs.min.js') }}">
+    </script>
+    {% endblock %}
+  </head>
+  <body>
+        {% block page_content %}
+        {% endblock %}
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <h5 class="white-text">VMScope v.0.3</h5>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+              <p class="grey-text text-lighten-4"> 2017 Copyright The Faculty of Medical Technology, Mahidol University, Thailand</p>
+            </div>
+          </div>
+        </footer>
+  </body>
+</html>

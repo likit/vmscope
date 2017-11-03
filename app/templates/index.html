@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+    <img src="{{ url_for('static', filename='images/MU-logo.png') }}"/>
+    <h3>Welcome to VMScope v.0.3</h3>
+    <p>An interactive training platform for medical technologists, lab scientists, pathologists and etc. in clinical microscopy.</p>
+    <p>We currently provide a virtual microscope training for stool examination of gastrointestinal parasites (VMscope-Parasite module v.0.3).</p>
+    <br/>
+    <h5>Try out our virtual microscope:</h5>
+    <ul class="collection">
+      <a href="/parasitology" class="collection-item">
+        <div>
+          Parasitology
+          <span class="secondary-content"><i class="icon-chevron-right"></i></span>
+        </div>
+      </a>
+    </ul>
+</div>
+{% endblock %}

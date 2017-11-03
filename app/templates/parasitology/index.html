@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_content %}
+<h3>Welcome to Parasitology Module</h3>
+<ul class="collection">
+  <a href="/parasitology/tutorial" class="collection-item">
+    <div>
+      Tutorial
+      <span class="secondary-content"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+  <a href="{{ url_for('parasitology.practice_index')}}" class="collection-item">
+    <div>
+      Practice mode
+      <span class="secondary-content"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+  <a href="/parasitology/assess" class="collection-item">
+    <div>
+      Assessment mode
+      <span class="secondary-content"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+  <a href="/" class="collection-item">
+    <div>
+      Main page
+      <span class="secondary-content"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+    </div>
+  </a>
+</ul>
+{% endblock %}
